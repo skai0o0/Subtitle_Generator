@@ -1,11 +1,7 @@
-@echo off@echo off
-
-REM Wrapper script - calls the actual setup script in scripts folderecho ================================================
-
-echo Starting setup...echo   Subtitle Generator Ver 2 - Setup Script
-
-call scripts\setup.batecho ================================================
-
+@echo off
+echo ================================================
+echo   Subtitle Generator Ver 2 - Setup Script
+echo ================================================
 echo.
 
 echo [1/4] Checking Python...

@@ -76,13 +76,13 @@
 choco install ffmpeg
 
 # 2. Run setup script
-.\setup.ps1
+.\scripts\setup.ps1
 
 # 3. Test installation
-python test_setup.py
+python tests\test_setup.py
 
 # 4. Run app
-.\run.ps1
+.\scripts\run.ps1
 ```
 
 #### Manual Setup:
@@ -141,26 +141,47 @@ subtitle-generator-ver2/
 │
 ├── 📄 main.py                      # Entry point
 ├── 📄 requirements.txt             # Dependencies
-├── 📄 test_setup.py               # Setup verification
+├── 📄 LICENSE                      # MIT License
 │
 ├── 🎨 ui/                         # User Interface
-│   └── main_window.py            # Main window (500+ lines)
+│   ├── main_window.py            # Main window (500+ lines)
+│   ├── fullscreen_overlay.py     # Fullscreen controls
+│   ├── subtitle_editor.py        # Subtitle editor
+│   └── playlist_widget.py        # Playlist widget
 │
 ├── ⚙️ core/                       # Core Logic
 │   ├── video_player.py           # Video player
-│   ├── whisper_transcriber.py    # AI transcription
-│   ├── nllb_translator.py        # Multi-language translation
+│   ├── whisper_transcriber.py    # AI transcription (Whisper)
+│   ├── nllb_translator.py        # Multi-language translation (NLLB-200)
 │   ├── subtitle_manager.py       # Subtitle management
 │   └── playlist_manager.py       # Playlist management
 │
 ├── 🔧 utils/                      # Utilities
 │
+├── 🧪 tests/                      # Tests & Demos
+│   ├── test_setup.py             # Setup verification
+│   ├── test_fullscreen.py        # Fullscreen test
+│   ├── demo_translation.py       # Translation demo
+│   └── demo_transcribe_translate.py  # Full workflow demo
+│
+├── 🛠️ scripts/                    # Setup & Run Scripts
+│   ├── setup.ps1 / setup.bat     # Setup script
+│   ├── run.ps1 / run.bat         # Run script
+│   └── upload_to_github.ps1      # GitHub upload script
+│
 └── 📚 docs/                       # Documentation
-    ├── README.md                  # This file
     ├── INSTALL.md                 # Installation guide
-    ├── QUICKSTART.md              # Quick reference
+    ├── QUICKSTART.md              # Quick start guide
+    ├── CONTRIBUTING.md            # Contribution guidelines
+    ├── GITHUB_SETUP.md            # GitHub setup guide
     ├── FEATURES.md                # Feature overview
     ├── WORKFLOW.md                # Workflow guide
+    ├── NLLB_TRANSLATION_GUIDE.md  # Translation guide (200+ languages)
+    ├── FULLSCREEN_GUIDE.md        # Fullscreen mode guide
+    ├── PLAYLIST_GUIDE.md          # Playlist management
+    ├── SUBTITLE_EDITOR.md         # Subtitle editor guide
+    ├── CUDA_SETUP.md              # GPU/CUDA setup
+    ├── PERFORMANCE.md             # Performance benchmarks
     └── CHANGELOG.md               # Version history
 ```
 
@@ -184,27 +205,31 @@ subtitle-generator-ver2/
 
 | Document | Description |
 |----------|-------------|
-| [**INSTALL.md**](INSTALL.md) | 📦 Hướng dẫn cài đặt chi tiết |
-| [**CUDA_SETUP.md**](CUDA_SETUP.md) | 🎮 GPU/CUDA setup guide |
-| [**QUICKSTART.md**](QUICKSTART.md) | ⚡ Quick start guide |
-| [**WORKFLOW.md**](WORKFLOW.md) | 🔄 Workflow diagrams |
-| [**FEATURES.md**](FEATURES.md) | ✨ Feature overview |
-| [**NLLB_TRANSLATION_GUIDE.md**](NLLB_TRANSLATION_GUIDE.md) | 🌍 Translation guide (200+ languages) |
-| [**FULLSCREEN_GUIDE.md**](FULLSCREEN_GUIDE.md) | 🖥️ Fullscreen mode guide |
-| [**PLAYLIST_GUIDE.md**](PLAYLIST_GUIDE.md) | 📋 Playlist management |
-| [**SUBTITLE_EDITOR.md**](SUBTITLE_EDITOR.md) | ✏️ Subtitle editor guide |
-| [**CHANGELOG.md**](CHANGELOG.md) | 📝 Version history |
+| [**INSTALL.md**](docs/INSTALL.md) | 📦 Hướng dẫn cài đặt chi tiết |
+| [**CUDA_SETUP.md**](docs/CUDA_SETUP.md) | 🎮 GPU/CUDA setup guide |
+| [**QUICKSTART.md**](docs/QUICKSTART.md) | ⚡ Quick start guide |
+| [**WORKFLOW.md**](docs/WORKFLOW.md) | 🔄 Workflow diagrams |
+| [**FEATURES.md**](docs/FEATURES.md) | ✨ Feature overview |
+| [**NLLB_TRANSLATION_GUIDE.md**](docs/NLLB_TRANSLATION_GUIDE.md) | 🌍 Translation guide (200+ languages) |
+| [**FULLSCREEN_GUIDE.md**](docs/FULLSCREEN_GUIDE.md) | 🖥️ Fullscreen mode guide |
+| [**PLAYLIST_GUIDE.md**](docs/PLAYLIST_GUIDE.md) | 📋 Playlist management |
+| [**SUBTITLE_EDITOR.md**](docs/SUBTITLE_EDITOR.md) | ✏️ Subtitle editor guide |
+| [**CONTRIBUTING.md**](docs/CONTRIBUTING.md) | 🤝 How to contribute |
+| [**GITHUB_SETUP.md**](docs/GITHUB_SETUP.md) | 🚀 GitHub setup guide |
+| [**CHANGELOG.md**](docs/CHANGELOG.md) | 📝 Version history |
 
 ---
 
 ## 📊 Statistics
 
 ```
-📦 Total Files: 21
-💻 Python Code: 1054 lines
-📚 Documentation: 6 markdown files
-⚙️ Core Modules: 3
-🎨 UI Components: 1 main window
+📦 Total Files: 45+
+💻 Python Code: 13 files (core + ui + utils)
+📚 Documentation: 27 markdown files
+⚙️ Core Modules: 6 (video, transcription, translation, subtitles, playlist)
+🎨 UI Components: 4 (main window, fullscreen, editor, playlist)
+🧪 Tests & Demos: 4 files
+🛠️ Scripts: 5 files
 ```
 
 ---
@@ -242,7 +267,7 @@ pip install -r requirements.txt
 **Out of memory**
 → Close other apps, use tiny model
 
-> 💡 Xem thêm trong [INSTALL.md](INSTALL.md#xử-lý-lỗi-thường-gặp)
+> 💡 Xem thêm trong [INSTALL.md](docs/INSTALL.md#xử-lý-lỗi-thường-gặp)
 
 ---
 

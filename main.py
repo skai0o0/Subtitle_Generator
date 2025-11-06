@@ -1,6 +1,6 @@
 """
 Subtitle Generator - Main Entry Point
-Ứng dụng tạo subtitle tự động cho video/audio sử dụng Whisper AI
+Ứng dụng tạo subtitle tự động cho video/audio sử dụng Whisper AI và NLLB-200 của Meta AI.
 """
 import sys
 from PySide6.QtWidgets import QApplication
