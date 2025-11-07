@@ -75,14 +75,25 @@
 # 1. Cài FFmpeg
 winget install ffmpeg
 
-# 2. Run setup script
-.\scripts\setup.ps1
+# 2. Clone repository
+git clone https://github.com/skai0o0/Subtitle_Generator.git
 
-# 3. Test installation
-python tests\test_setup.py
+# 3. Open CMD
+Open Subtitle_Generator foler
+Type "CMD" on the address bar
+Enter
 
-# 4. Run app
-.\scripts\run.ps1
+# 4. Install Pytorch
+- For CPU: pip3 install torch torchaudio torchvision
+- For NVIDIA GPUs: pip3 install torch torchaudio torchvision --index-url https://download.pytorch.org/whl/cu126
+- For NVIDIA RTX 50s GPUs: pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+
+# 5. Install requirements
+Auto: run setup.bat
+Manual: pip install -r requirements.txt
+
+# 6. Run app
+run run.bat
 ```
 
 #### Manual Setup:
