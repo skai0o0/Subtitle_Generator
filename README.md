@@ -123,8 +123,8 @@ pip install -r requirements.txt
 - For NVIDIA RTX 50s GPUs: pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
 ```
 
-```powershell
 # 4. Run app
+```powershell
 python main.py
 ```
 
