@@ -1,0 +1,23 @@
+# Requirements for CPU (Fallback)
+# For GPU/CUDA setup, use requirements-cuda.txt + PyTorch CUDA
+
+# GUI Framework
+PySide6>=6.6.0
+PySide6-Addons>=6.6.0
+
+# AI Transcription
+openai-whisper>=20231117
+
+# Translation
+transformers>=4.35.0
+sentencepiece>=0.1.99
+
+# PyTorch CPU version (slower, use only if no NVIDIA GPU)
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# Media Processing
+ffmpeg-python>=0.2.0
+
+# Utilities
+numpy>=1.24.0
