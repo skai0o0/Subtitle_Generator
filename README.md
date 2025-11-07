@@ -82,8 +82,8 @@ git clone https://github.com/skai0o0/Subtitle_Generator.git
 ```
 
 # 3. Open CMD
-Open Subtitle_Generator foler
-Type "CMD" on the address bar
+Open Subtitle_Generator folder <br>
+Type "CMD" on the address bar <br>
 Enter
 
 # 4. Install Pytorch
