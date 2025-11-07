@@ -73,7 +73,7 @@
 #### Windows PowerShell:
 ```powershell
 # 1. Cài FFmpeg
-choco install ffmpeg
+winget install ffmpeg
 
 # 2. Run setup script
 .\scripts\setup.ps1
