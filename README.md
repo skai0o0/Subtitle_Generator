@@ -71,12 +71,15 @@
 ### ⚡ Quick Setup
 
 #### Windows PowerShell:
-```powershell
 # 1. Cài FFmpeg
+```powershell
 winget install ffmpeg
+```
 
 # 2. Clone repository
+```powershell
 git clone https://github.com/skai0o0/Subtitle_Generator.git
+```
 
 # 3. Open CMD
 Open Subtitle_Generator foler
@@ -84,34 +87,46 @@ Type "CMD" on the address bar
 Enter
 
 # 4. Install Pytorch
+```powershell
 - For CPU: pip3 install torch torchaudio torchvision
 - For NVIDIA GPUs: pip3 install torch torchaudio torchvision --index-url https://download.pytorch.org/whl/cu126
 - For NVIDIA RTX 50s GPUs: pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+```
 
 # 5. Install requirements
 Auto: run setup.bat
-Manual: pip install -r requirements.txt
+Manual: 
+```powershell
+pip install -r requirements.txt
+```
 
 # 6. Run app
 run run.bat
-```
 
 #### Manual Setup:
-```powershell
+
 # 1. Create virtual environment
+```powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Run app
-python main.py
 ```
 
-> 📖 **Chi tiết:** Xem [INSTALL.md](INSTALL.md) để biết hướng dẫn đầy đủ
+# 2. Install dependencies
+```powershell
+pip install -r requirements.txt
+```
 
----
+# 3. Install Pytorch
+```powershell
+- For CPU: pip3 install torch torchaudio torchvision
+- For NVIDIA GPUs: pip3 install torch torchaudio torchvision --index-url https://download.pytorch.org/whl/cu126
+- For NVIDIA RTX 50s GPUs: pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+```
+
+```powershell
+# 4. Run app
+python main.py
+```
 
 ## 📖 Sử dụng
 
